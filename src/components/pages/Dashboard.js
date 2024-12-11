@@ -16,7 +16,7 @@ export default function Dashboard() {
           {/* Navigation Bar */}
           <nav className="bg-gradient-to-r from-blue-500 to-purple-600 shadow-md text-white">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-              <h1 className="text-2xl font-bold">Link Sharing App</h1>
+              <h1 className="text-2xl font-bold">SnapLink</h1>
               <div>
                 <span className="mr-4">
                   Hello,{" "}
