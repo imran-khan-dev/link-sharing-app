@@ -122,8 +122,8 @@ const LinkSharing = () => {
   };
 
   return (
-    <div className="min-h-screen py-8 flex items-center justify-center">
-      <div className="w-full max-w-3xl bg-white shadow-lg rounded-lg p-6">
+    <div className="min-h-screen py-8 flex items-start justify-center">
+      <div className="w-full bg-white shadow-lg rounded-lg p-6">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-6">
           Manage Your Links
         </h1>

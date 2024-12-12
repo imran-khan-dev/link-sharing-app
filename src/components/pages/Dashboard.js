@@ -15,7 +15,7 @@ export default function Dashboard() {
         <div className="min-h-screen bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300">
           {/* Navigation Bar */}
           <nav className="bg-gradient-to-r from-blue-500 to-purple-600 shadow-md text-white">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="mx-auto px-4 py-4 flex justify-between items-center">
               <h1 className="text-2xl font-bold">SnapLink</h1>
               <div>
                 <span className="mr-4">

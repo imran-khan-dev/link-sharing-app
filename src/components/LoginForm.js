@@ -63,8 +63,12 @@ export default function LoginForm() {
         await login(formData.email, formData.password);
         navigate("/dashboard");
       } catch (error) {
-        console.log(error);
-        setErrors("Failed to login");
+        console.log("Firebase login error object:", error);
+        if (error.code === "auth/invalid-credential") {
+          alert("Bro, its invalid credentials. Please check your email and password.");
+        } else {
+          alert("An error occurred. Please try again, bro!");
+        }
         setLoading(false);
       }
     }
@@ -129,7 +133,6 @@ export default function LoginForm() {
         <Link to="/signup" className="text-blue-600 ml-2 hover:underline">
           Sign up
         </Link>
-      
       </p>
     </div>
   );

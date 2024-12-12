@@ -86,6 +86,9 @@ export default function SignupForm() {
         navigate("/dashboard");
       } catch (error) {
         console.log(error);
+        if (error.code === "auth/email-already-in-use") {
+          alert("Bro, you are already in my friendlist, just login");
+        }
         setLoading(false);
         setErrors("Failed to create an account");
       }

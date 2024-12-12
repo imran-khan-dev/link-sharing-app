@@ -47,9 +47,14 @@ export function AuthProvider({ children }) {
   }
 
   // Login function
-  function login(email, password) {
+  async function login(email, password) {
     const auth = getAuth();
-    return signInWithEmailAndPassword(auth, email, password);
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch (error) {
+      throw error;
+    }
   }
 
   // Logout function
