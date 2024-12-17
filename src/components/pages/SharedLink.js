@@ -11,7 +11,7 @@ const SharedLink = () => {
   const [copied, setCopied] = useState(false);
 
   // Share Url by Copy in Clipboard
-  const shareUrl = `${window.location.origin}/shared/${userId}`;
+  const shareUrl = `${window.location.origin}/shared-links/${userId}/${userName}`;
   const copyToClipboard = () => {
     navigator.clipboard.writeText(shareUrl).then(() => {
       setCopied(true);

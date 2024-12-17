@@ -77,7 +77,14 @@ export default function SignupForm() {
 
     setErrors(newErrors);
 
-    if (Object.keys(newErrors.length === 0)) {
+    const emptyKeys = Object.keys(newErrors).filter(
+      (key) => newErrors[key] === ""
+    );
+    const isValid =
+      Object.values(newErrors).every((value) => value === "") &&
+      formData.confirmPassword === formData.password;
+    console.log(emptyKeys);
+    if (isValid) {
       console.log("Form submitted successfully", formData);
       try {
         setErrors("");
@@ -87,7 +94,7 @@ export default function SignupForm() {
       } catch (error) {
         console.log(error);
         if (error.code === "auth/email-already-in-use") {
-          alert("Bro, you are already in my friendlist, just login");
+          alert("Email is already registered, please login");
         }
         setLoading(false);
         setErrors("Failed to create an account");

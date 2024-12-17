@@ -1,13 +1,21 @@
 import { useAuth } from "../../contexts/AuthContext";
 import Login from "./Login";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Profile from "./Profile";
 import LinkSharing from "../LinkSharing";
 
 export default function Dashboard() {
   const { currentUser, logout } = useAuth();
 
-  const [profileContent, setProfileContent] = useState(false);
+  const [profileContent, setProfileContent] = useState(() => {
+    // Retrieve from localStorage or default to false
+    return JSON.parse(localStorage.getItem("profileContent")) || false;
+  });
+
+  useEffect(() => {
+    // Save to localStorage whenever profileContent changes
+    localStorage.setItem("profileContent", JSON.stringify(profileContent));
+  }, [profileContent]);
 
   return (
     <>
